@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TA5 Website</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <form>
+            <label>Username</label> <br/>
+            <input type="text" name="username" required> <br/>
+
+            <label>Password</label> <br/>
+            <input type="password" name="password" required> <br/>
+
+            <button type="submit" onclick="submit()">Login</button>
+            <button type="reset" onclick="reset()">Reset</button>
+        </form>
+
+        <script>
+            document.querySelector("button[type='submit']").addEventListener("click", submit);
+            document.querySelector("button[type='reset']").addEventListener("click", reset);
+
+            function submit(event) {
+                event.preventDefault()
+                
+                var username = document.querySelector("input[name='username']").value;
+                var password = document.querySelector("input[name='password']").value;
+
+                if (username != "" && password != "") {
+                    alert("Login Success");
+                } else { alert("Login Failed"); }
+            }
+
+            function reset() {
+                document.querySelector("input[name='username']").value = "";
+                document.querySelector("input[name='password']").value = "";
+                alert("Reset Success");
+            }
+        </script>
+    </body>
+</html>
